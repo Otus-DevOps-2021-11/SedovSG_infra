@@ -15,7 +15,7 @@ SedovSG Infra repository
 
 ```ini
 Host infra.yc
-    HostName 51.250.21.21
+    HostName 51.250.18.114
     User appuser
     IdentityFile ~/.ssh/id_rsa.yc
 
