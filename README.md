@@ -7,10 +7,7 @@ SedovSG Infra repository
 
 ## Использовать флаг `-J` командной строки:
 
-**bastion_IP: 51.250.18.114**
-**someinternalhost_IP: 10.129.0.23**
-
-```$: ssh -A -J appuser@infra.yc appuser@10.129.0.26```
+```$: ssh -A -J appuser@51.250.18.114 appuser@10.129.0.23```
 
 ## Использовать опцию `ProxyJump` в конфигурации клиента:
 
