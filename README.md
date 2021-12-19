@@ -18,12 +18,12 @@ someinternalhost_IP = 10.129.0.26
 
 ```ini
 Host infra.yc
-    HostName 51.250.29.185
+    HostName 51.250.19.223
     User appuser
     IdentityFile ~/.ssh/id_rsa.yc
 
 Host infra-internal.yc
-    HostName 10.129.0.23
+    HostName 10.129.0.26
     User appuser
     ProxyJump infra.yc
 ```
