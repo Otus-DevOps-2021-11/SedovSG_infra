@@ -7,7 +7,7 @@ SedovSG Infra repository
 
 ## Использовать флаг `-J` командной строки:
 
-```$: ssh -A -J appuser@51.250.18.114 appuser@10.129.0.23```
+```$: ssh -A -J appuser@infra.yc appuser@10.129.0.26```
 
 ## Использовать опцию `ProxyJump` в конфигурации клиента:
 
