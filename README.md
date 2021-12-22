@@ -4,9 +4,6 @@ SedovSG Infra repository
 bastion_IP = 51.250.19.223
 someinternalhost_IP = 10.129.0.26
 
-testapp_IP = 51.250.9.8
-testapp_port = 9292
-
 # SSH подключение к внутренним серверам за бастионом
 
 **Есть 2 варианта использования данной опции**.
@@ -29,4 +26,22 @@ Host infra-internal.yc
     HostName 10.129.0.26
     User appuser
     ProxyJump infra.yc
+```
+
+# Создание ВМ яндекс облака через CLI:
+
+testapp_IP = 51.250.9.8
+testapp_port = 9292
+
+```bash
+$: yc compute instance create \
+--name reddit-app-test \
+--hostname reddit-app-test \
+--memory=4 \
+--zone=ru-central1-a \
+--create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+--network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+--metadata-from-file user-data=metadata.yaml \
+--metadata serial-port-enable=1 \
+--ssh-key ~/.ssh/id_rsa.yc.pub
 ```
