@@ -4,6 +4,9 @@ SedovSG Infra repository
 bastion_IP = 51.250.19.223
 someinternalhost_IP = 10.129.0.26
 
+testapp_IP = 51.250.9.8
+testapp_port = 9292
+
 # SSH подключение к внутренним серверам за бастионом
 
 **Есть 2 варианта использования данной опции**.
