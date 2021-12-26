@@ -1,0 +1,9 @@
+#cloud-config
+
+users:
+  - name: appuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD69cMvuiOaopokOeR2JQXEw2juiQ8NOAiRMNQUv8Xa81rh4qf+g/DrAdLur++eEs9/BYwjSzva04oPrJ1hh6jfWDAY6JEovMN44ep+L6kwkjSTfDRLlahgpoz5wgKwxSfY6PO49CBWse/TONTQulCl73biEEVU4W3WoHF348u1FjnDv2N80W1AbGAdkxdrdxNjeLTSxhf+u4GxzPWxYmCOdB79jm74gWlcojjMnGKfnFerVfoO+2bb5WRfZ3misZ8Qy9TuM/F75rhSuvIWAVA86/N+pKW2unybvDHRoCmIetvY6/YCrQGKQhowOPoxNSzvkFRb331Kz3zlLApJQUsaIeGK/YE+wNnYEPZRvsLoUacXqjDbsfv0Y3uK2hI4it1u+suJ8Ns4/npe1kkyPyAr5WKnyQldxz369CFcQkwVnD3OtfCQOW/al2qZRqiz5huv3PVdzCx9VagwYTivCtbgY4/IF+6SRPZfW/leOasq02Yym/W/m4fAOexDWC3jGhPNS78OuaexxJbWEZRGiXAlsy+eE5NqVBeZDEvVQI5KzYnW0WXfiYdc74YHB/YWOqxY/KOhxkBaaYLteWt8at++sMEDVqZcURyrzXbGdQzcXxTD14MDBuR2jk3yjjsOVXuvPU00crZfRv23DPa2svtmK/rU3wfs6BFks64k4yMwYw== appuser
