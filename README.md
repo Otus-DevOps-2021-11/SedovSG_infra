@@ -44,3 +44,19 @@ $: yc compute instance create \
 --metadata-from-file user-data=cloud-config.yaml \
 --metadata serial-port-enable=1
 ```
+
+# Использование сборщика образов Packer:
+
+Возможно собрать минимальный образ ОС и полный (со всеми зависимостями и приложением)
+
+## Для сборки минимального образа для Яндекс Облака выполнить:
+
+```bash
+$: cd packer && cp -n variables.json.examples variables.json && packer build -var-file="variables.json" ./ubuntu16.json
+```
+
+## Для сборки полного образа для Яндекс Облака выполнить:
+
+```bash
+$: cd packer && cp -n variables.json.examples variables.json && packer build -var-file="variables.json"./immutable.json
+```
