@@ -18,14 +18,14 @@ someinternalhost_IP = 10.129.0.26
 
 ```ini
 Host infra.yc
-    HostName 51.250.19.223
-    User appuser
-    IdentityFile ~/.ssh/id_rsa.yc
+HostName 51.250.19.223
+User appuser
+IdentityFile ~/.ssh/id_rsa.yc
 
 Host infra-internal.yc
-    HostName 10.129.0.26
-    User appuser
-    ProxyJump infra.yc
+HostName 10.129.0.26
+User appuser
+ProxyJump infra.yc
 ```
 
 # Создание ВМ яндекс облака через CLI:
@@ -59,4 +59,14 @@ $: cd packer && cp -n variables.json.examples variables.json && packer build -va
 
 ```bash
 $: cd packer && cp -n variables.json.examples variables.json && packer build -var-file="variables.json"./immutable.json
+```
+
+# Использование Terraform для управления инфраструктурой:
+
+Используемая версия Terraform **0.12.3**
+
+## Для зупуска выполнить:
+
+```bash
+$: cd terraform && cp -n terraform.tfvars.example terraform.tfvars && terraform apply
 ```
