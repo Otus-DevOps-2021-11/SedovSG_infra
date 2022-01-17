@@ -11,7 +11,7 @@
             "folder_id": "{{user `folder_id`}}",
             "source_image_family": "{{user `source_image_family`}}",
             "image_name": "reddit-db-{{timestamp}}",
-            "image_family": "reddit-base",
+            "image_family": "reddit-db-base",
             "image_description": "MongoDB on Ubuntu16 image",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",

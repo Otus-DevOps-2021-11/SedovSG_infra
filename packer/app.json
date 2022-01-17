@@ -11,7 +11,7 @@
             "folder_id": "{{user `folder_id`}}",
             "source_image_family": "{{user `source_image_family`}}",
             "image_name": "reddit-app-{{timestamp}}",
-            "image_family": "reddit-base",
+            "image_family": "reddit-app-base",
             "image_description": "App on Ubuntu16 image",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
