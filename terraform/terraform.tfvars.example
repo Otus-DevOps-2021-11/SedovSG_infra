@@ -1,0 +1,7 @@
+cloud_id                 = "b1g6t5ppfu2dge7g00hi"
+folder_id                = "b1gbnpgtpm9747lkkr99"
+zone                     = "ru-central1-a"
+image_id                 = "fd8u5ouittd1osr7csqu"
+public_key_path          = "~/.ssh/id_rsa.yc.pub"
+subnet_id                = "e9bog90sabqbcp2giu9q"
+service_account_key_file = "key.json"
