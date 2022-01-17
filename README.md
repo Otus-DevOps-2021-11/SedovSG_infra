@@ -70,3 +70,13 @@ $: cd packer && cp -n variables.json.examples variables.json && packer build -va
 ```bash
 $: cd terraform && cp -n terraform.tfvars.example terraform.tfvars && terraform apply
 ```
+
+# Использование Ansible для удалённого управления конфигурацией:
+
+Используемая версия Ansible **2.12.1**
+
+```bash
+$: cd ansible && ansible all -m ping -i inventory.yml
+$: ansible app -m shell -a 'ruby -v; bundler -v' && ansible db -m service -a name=mongod
+$: ansible app -m git -a 'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
+```

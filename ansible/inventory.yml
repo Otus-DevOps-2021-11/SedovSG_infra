@@ -1,12 +1,10 @@
 ---
-all:
+app:
   hosts:
-    app:
-      hosts:
-        appserver:
-          ansible_host: 51.250.12.170
+    appserver:
+      ansible_host: 51.250.12.170
 
-    db:
-      hosts:
-        dbserver:
-          ansible_host: 62.84.124.87
+db:
+  hosts:
+    dbserver:
+      ansible_host: 62.84.124.87
