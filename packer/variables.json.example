@@ -1,7 +1,7 @@
 {
     "service_account_key_file": "key.json",
     "folder_id": "345",
-    "source_image_family": "556"
+    "source_image_family": "556",
     "disk_size_gb": 10,
     "instance_cores": 2,
     "instance_mem_gb": 4
