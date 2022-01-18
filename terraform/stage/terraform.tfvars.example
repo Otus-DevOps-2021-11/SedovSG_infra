@@ -9,5 +9,3 @@ private_key_path         = "~/.ssh/id_rsa.yc"
 subnet_id                = "e9bog90sabqbcp2giu9q"
 service_account_key_file = "/home/stas/yandex-cloud/keys/terraform/key.json"
 instance_count           = 1
-s3_access_key            = "my_access_key"
-s3_secret_key            = "my_secret_key"

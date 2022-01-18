@@ -1,0 +1,31 @@
+{
+    "variables": {
+        "service_account_key_file": "/home/stas/yandex-cloud/keys/packer/key.json",
+        "folder_id": "b1gbnpgtpm9747lkkr99",
+        "source_image_family": "ubuntu-1604-lts"
+    },
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `service_account_key_file`}}",
+            "folder_id": "{{user `folder_id`}}",
+            "source_image_family": "{{user `source_image_family`}}",
+            "image_name": "reddit-app-{{timestamp}}",
+            "image_family": "reddit-app-base",
+            "image_description": "App on Ubuntu16 image",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "use_ipv4_nat": "true",
+            "instance_cores": "{{user `instance_cores`}}",
+            "instance_mem_gb": "{{user `instance_mem_gb`}}",
+            "disk_size_gb": "{{user `disk_size_gb`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}

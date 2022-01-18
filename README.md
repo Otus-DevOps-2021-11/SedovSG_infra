@@ -71,6 +71,18 @@ $: cd packer && cp -n variables.json.examples variables.json && packer build -va
 $: cd terraform && cp -n terraform.tfvars.example terraform.tfvars && terraform apply
 ```
 
+## Для запуска в среде развёртывания **stage** выполнить:
+
+```bash
+$: cd terraform/stage && cp -n terraform.tfvars.example terraform.tfvars && terraform apply
+```
+
+## Для запуска в среде развёртывания **prod** выполнить:
+
+```bash
+$: cd terraform/prod && cp -n terraform.tfvars.example terraform.tfvars && terraform apply
+```
+
 # Использование Ansible для удалённого управления конфигурацией:
 
 Используемая версия Ansible **2.12.1**
