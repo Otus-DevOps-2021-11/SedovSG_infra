@@ -5,6 +5,15 @@
     mongo_bind_ip: 0.0.0.0
     db_host: 51.250.13.216
   tasks:
+    - name: Change mongo config file
+      become: true
+      template:
+        src: templates/mongod.conf.j2
+        dest: /etc/mongod.conf
+        mode: 0644
+      notify: restart mongod
+      tags: db-tag
+
     - name: Add unit file for Puma
       become: true
       copy:
@@ -38,6 +47,10 @@
         chdir: /home/ubuntu/reddit
       tags: deploy-tag
   handlers:
+    - name: restart mongod
+      become: true
+      service: name=mongod state=restarted
+
     - name: reload puma
       become: true
       systemd:

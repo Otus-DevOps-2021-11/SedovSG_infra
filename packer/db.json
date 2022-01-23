@@ -12,7 +12,7 @@
             "source_image_family": "{{user `source_image_family`}}",
             "image_name": "reddit-db-{{timestamp}}",
             "image_family": "reddit-db-base",
-            "image_description": "MongoDB on Ubuntu16 image",
+            "image_description": "MongoDB on Ubuntu16 image with provisioners",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
             "use_ipv4_nat": "true",
@@ -23,9 +23,8 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "playbook_file": "../ansible/packer_app.yml"
         }
     ]
 }

@@ -92,3 +92,29 @@ $: cd ansible && ansible all -m ping -i inventory.yml
 $: ansible app -m shell -a 'ruby -v; bundler -v' && ansible db -m service -a name=mongod
 $: ansible app -m git -a 'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
 ```
+
+# Использование пьес Ansible для удалённого управления конфигурацией:
+
+Для выполнения отдельных задач можно использовать теги и шаблоны ограничения хостов:
+
+```bash
+$: cd ansible && \
+ansible-playbook reddit_app_one_play.yml --limit db --tags db-tag && \
+ansible-playbook reddit_app_one_play.yml --limit app --tags app-tag && \
+ansible-playbook reddit_app_one_play.yml --limit app --tags deploy-tag
+```
+
+Либо только теги:
+
+```bash
+$: cd ansible && \
+ansible-playbook reddit_app_multiple_plays.yml --tags db-tag && \
+ansible-playbook reddit_app_multiple_plays.yml --tags app-tag && \
+ansible-playbook reddit_app_multiple_plays.yml --tags deploy-tag
+```
+
+Кроме того пьесы можно разделять по контекстам выполнения задач:
+
+```bash
+$: cd ansible && ansible-playbook site.yaml
+```
