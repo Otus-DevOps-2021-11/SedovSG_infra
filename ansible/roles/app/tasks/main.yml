@@ -13,8 +13,11 @@
       owner: ubuntu
       group: ubuntu
 
-  - name: enable puma
+  - name: Enable puma
     ansible.builtin.systemd:
       name: puma
       enabled: yes
       masked: no
+
+  - name: Show info about the env this host belongs to
+    debug: msg="This host is in {{ env }} environment!!!"
