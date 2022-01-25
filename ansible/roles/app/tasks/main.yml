@@ -3,6 +3,7 @@
     copy:
       src: puma.service
       dest: /etc/systemd/system/puma.service
+      mode: 0644
     when: "ansible_service_mgr == 'systemd'"
     notify: reload puma
 
@@ -12,6 +13,7 @@
       dest: /home/ubuntu/db_config
       owner: ubuntu
       group: ubuntu
+      mode: 0644
 
   - name: Enable puma
     ansible.builtin.systemd:
