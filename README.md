@@ -118,3 +118,25 @@ ansible-playbook reddit_app_multiple_plays.yml --tags deploy-tag
 ```bash
 $: cd ansible && ansible-playbook site.yaml
 ```
+
+# Использование ролей в Ansible, для управления режимами сред окружения:
+
+Для промежуточной среды окружения:
+
+```bash
+$: cd ansible && ansible-playbook playbooks/site.yml
+```
+
+Для среды производства:
+
+```bash
+$: cd ansible && ansible-playbook -i environments/prod/inventory playbooks/site.yml
+```
+
+# Использование Ansible Vault для шифрования ключей:
+
+```bash
+$: cd ansible && \
+ansible-vault encrypt environments/prod/credentials.yaml
+ansible-vault encrypt environments/stage/credentials.yml
+```
